@@ -414,14 +414,41 @@ const Contact = () => {
           </div>
 
           <Card className="border-0 shadow-xl overflow-hidden max-w-4xl mx-auto">
-            <div className="h-96 bg-gray-200 relative">
-              {/* Placeholder for map - in a real implementation, you'd use Google Maps or similar */}
-              <div className="absolute inset-0 flex items-center justify-center bg-consulting-lighter-blue">
-                <div className="text-center text-consulting-blue">
-                  <MapPin className="w-16 h-16 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">OptiTech Consulting Ltd</h3>
-                  <p>19B Kampala Street</p>
-                  <p>Off Cairo Street, Abuja</p>
+            <div className="relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8545288897317!2d7.478094275691587!3d9.077014388234147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0af888b76257%3A0x980a87fd823607ac!2s19b%20Kampala%20St%2C%20Wuse%202%2C%20Abuja%20904101%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1753435890368!5m2!1sen!2sng" 
+                width="100%" 
+                height="450" 
+                style={{ border: 0 }} 
+                allowFullScreen
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+                title="OptiTech Consulting Location - 19B Kampala Street, Wuse II, Abuja"
+              />
+            </div>
+            
+            {/* Location Info Overlay */}
+            <div className="bg-white p-6 border-t">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-consulting-lighter-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-consulting-blue" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">OptiTech Consulting Ltd</h3>
+                  <p className="text-gray-600 mb-1">19B Kampala Street</p>
+                  <p className="text-gray-600 mb-1">Off Cairo Street, Ademola Adetokunbo Road</p>
+                  <p className="text-gray-600 mb-3">Wuse II, Abuja, FCT</p>
+                  <div className="flex flex-wrap gap-4 text-sm">
+                    <div className="flex items-center space-x-2 text-consulting-blue">
+                      <Phone className="w-4 h-4" />
+                      <span>+234 806 633 1176</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-consulting-blue">
+                      <Clock className="w-4 h-4" />
+                      <span>Mon-Fri: 8AM-6PM WAT</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
