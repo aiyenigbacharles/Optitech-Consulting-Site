@@ -1,73 +1,124 @@
-# Welcome to your Lovable project
+# OptiTech Consulting Ltd - Strategic Business Consulting
 
-## Project info
+Welcome to the OptiTech Consulting Site repository. This project powers the official web presence for OptiTech Consulting Ltd, a leading IT and business consulting firm dedicated to helping companies achieve exceptional growth and operational excellence through technology, strategy, and training.
 
-**URL**: https://lovable.dev/projects/2964e655-4317-46b9-8601-53960055626f
+---
 
-## How can I edit this code?
+## Table of Contents
 
-There are several ways of editing your application.
+- [About OptiTech Consulting](#about-optitech-consulting)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Editing the Code](#editing-the-code)
+- [Contributing](#contributing)
+- [License](#license)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2964e655-4317-46b9-8601-53960055626f) and start prompting.
+## About OptiTech Consulting
 
-Changes made via Lovable will be committed automatically to this repo.
+OptiTech Consulting Ltd is a strategic business and IT consulting firm specializing in:
 
-**Use your preferred IDE**
+- IT Strategy & Roadmapping
+- Digital Transformation
+- Cybersecurity
+- System Integration
+- Disaster Recovery
+- Technology Training
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Vision:**  
+To become a leading IT consulting and solutions provider recognized for our commitment to excellence, innovation, and client-centricity, setting new standards in technology training, equipment procurement, and IT consulting.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Mission:**  
+To deliver comprehensive IT solutions and training that bridge the technology skills gap, empower organizations, and drive sustainable business outcomes.
 
-Follow these steps:
+---
+
+## Features
+
+- Modern, responsive business website
+- Detailed service offerings with feature breakdowns for each area of expertise
+- Testimonials from satisfied clients across multiple industries (Banking, Healthcare, Education, etc.)
+- About page covering company vision, mission, and impact
+- Fast, interactive UI built with modern frameworks
+- Easily editable via Lovable, GitHub, or your preferred IDE
+
+---
+
+## Technologies Used
+
+- [Vite](https://vitejs.dev/) – Next-generation frontend tooling
+- [TypeScript](https://www.typescriptlang.org/) – Typed JavaScript at scale
+- [React](https://react.dev/) – User interface library
+- [shadcn-ui](https://ui.shadcn.com/) – Accessible UI components
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js & npm](https://nodejs.org/) (Recommended: install with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+
+### Installation
+
+Clone the repository and install dependencies:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
+cd Optitech-Consulting-Site
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Running the Development Server
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+This will start the development server with hot reloading and an instant preview.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Editing the Code
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+There are several ways to edit your application:
 
-## What technologies are used for this project?
+### 1. Edit Directly in GitHub
 
-This project is built with:
+- Navigate to the desired file(s) in this repository.
+- Click the "Edit" button (pencil icon) at the top right.
+- Make your changes and commit.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
-## How can I deploy this project?
+### 2. Use Your Preferred IDE
 
-Simply open [Lovable](https://lovable.dev/projects/2964e655-4317-46b9-8601-53960055626f) and click on Share -> Publish.
+- Clone the repo (see above).
+- Make changes locally.
+- Push your changes to GitHub. Updates are reflected in Lovable.
 
-## Can I connect a custom domain to my Lovable project?
+### 3. Use GitHub Codespaces
 
-Yes, you can!
+- On your repository main page, click the "Code" button.
+- Open the "Codespaces" tab and create a new codespace.
+- Edit and commit changes directly in the browser.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests.
+
+1. Fork this repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Create a new Pull Request
+
+---
+
+## License
+
+This project is private and does not currently specify a license.
