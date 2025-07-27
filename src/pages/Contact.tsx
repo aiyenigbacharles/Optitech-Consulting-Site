@@ -154,12 +154,12 @@ const Contact = () => {
   ]
 
   const services = [
-    "Business Strategy",
-    "Operational Excellence",
-    "Human Resources",
+    "IT Strategy & Roadmapping",
     "Capacity Building",
-    "Risk Management",
-    "Change Management",
+    "Security System Capacity Building",
+    "System Integration",
+    "Collaboration and Partnering with State Actors",
+    "Financial Consulting Services",
     "Other",
   ]
 

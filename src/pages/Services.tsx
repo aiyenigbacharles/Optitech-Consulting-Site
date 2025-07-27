@@ -44,7 +44,7 @@ const Services = () => {
     {
       icon: <Landmark className="w-12 h-12 text-consulting-blue" />,
       title: "Financial Consulting Services",
-      description: "For Local, State and Federal Government.",
+      description: "For Local, State and Federal Governments.",
       features: ["Account Reconciliation", "Payment Recovery", "Taxes and other related matters"],
       // outcomes: "Achieve 90%+ adoption rates"
     }
