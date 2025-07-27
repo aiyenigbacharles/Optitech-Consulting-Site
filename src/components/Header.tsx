@@ -49,6 +49,7 @@ export const Header = () => {
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-consulting-blue">OptiTech</span>
               <span className="text-basem text-consulting-blue">Consulting Ltd</span>
+              <span className="text-xs text-red-500">RC: 8075000</span>
             </div>
           </Link>
 

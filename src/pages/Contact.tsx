@@ -130,7 +130,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6 text-consulting-blue" />,
       title: "Email Us",
-      content: "optiTechconsultingltd@gmail.com",
+      content: "optitechconsultingltd@gmail.com",
       description: "Send us an email anytime",
     },
     {
@@ -142,7 +142,7 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6 text-consulting-blue" />,
       title: "Visit Us",
-      content: "19B, Kampala Street",
+      content: "Abuja Office:",
       description: "19B, Kampala Street, Off Cairo Street, Ademola Adetokunbo Road, Wuse II, Abuja",
     },
     {

@@ -34,7 +34,7 @@ const About = () => {
   ];
 
   const timeline = [
-    { event: "Founded with Purpose", description: "Established under RC: 8075000 to revolutionize IT capabilities across Nigeria's public and private sectors." },
+    { event: "Founded with Purpose", description: "Established to revolutionize IT capabilities across Nigeria's public and private sectors." },
     { event: "Built on Trust", description: "Evolved into a premier IT consulting partner by delivering cutting-edge solutions that drive efficiency and innovation."},
     { event: "Sector Wide Expansion", description: "Expanded services to empower clients across 5+ critical industries: government, finance, healthcare, education, and telecom." },
     { event: "Global Partnerships Forged", description: "Secured alliances with industry leaders Microsoft, Cisco, AWS, and CompTIA to offer globally recognized certifications." },
