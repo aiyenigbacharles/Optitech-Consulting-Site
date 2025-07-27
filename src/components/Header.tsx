@@ -41,7 +41,7 @@ export const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             <div className="w-20 h-20 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center">
                 <img 
-                  src="./Optitech logo 2.ico" 
+                  src="./OptiTech Logo - 1.ico" 
                   alt="OptiTech Logo" 
                   className="w-20 h-20 rounded-lg" 
                 />

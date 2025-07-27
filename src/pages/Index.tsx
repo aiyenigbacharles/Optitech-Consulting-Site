@@ -50,8 +50,8 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
-                Transform Your 
-                <span className="text-consulting-blue"> Business</span> Today
+                Excellence 
+                <span className="text-consulting-blue"> and</span> Innovation
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                 <span className="font-bold text-blue-400">OptiTech Consulting Limited</span> is a trusted IT solutions provider, offering expert training, infrastructure, 

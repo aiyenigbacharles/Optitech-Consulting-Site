@@ -2,50 +2,50 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { FolderCode, Cog, ShieldCheck, MonitorCog, Shield, ShoppingCart, ArrowRight, CheckCircle } from 'lucide-react';
+import { FolderCode, Cog, ShieldCheck, MonitorCog, Handshake, Shield, ShoppingCart, ArrowRight, CheckCircle, Landmark } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
       icon: <FolderCode className="w-12 h-12 text-consulting-blue" />,
       title: "IT Strategy & Roadmapping",
-      description: "Align technology with business vision.",
+      description: "Align Technology with Business Vision.",
       features: ["Goal-focused tech planning", "Scalable infrastructure design", "Cost-value prioritization"],
       // outcomes: "Increase revenue by 25-40% within 12 months"
     },
     {
       icon: <Cog className="w-12 h-12 text-consulting-blue" />,
-      title: "Digital Transformation",
-      description: "Redefine operations for the digital age.",
-      features: ["Technology Strategy", "Workflow automation", "Data-driven culture"],
+      title: "Capacity Building",
+      description: "Through Trainings and Workshops.",
+      features: ["Customized Training for your Industry", "Experimental Learning Frameworks", "Performance Benchmarking"],
       // outcomes: "Reduce operational costs by 15-30%"
     },
     {
       icon: <ShieldCheck className="w-12 h-12 text-consulting-blue" />,
-      title: "Cybersecurity",
-      description: "Safeguard your critical assets.",
-      features: ["Risk & vulnerability scans", "Regulation-ready safeguards", "Staff security training"],
+      title: "Security System Capacity Building",
+      description: "Building Institutional Cyber Resilience Through Adaptive Training.",
+      features: ["Executive Cyber Risk Governance", "Regulation-ready safeguards", "Staff security training"],
       // outcomes: "Improve employee satisfaction by 40%+"
     },
     {
       icon: <MonitorCog className="w-12 h-12 text-consulting-blue" />,
       title: "System Integration",
-      description: "Unify and amplify your tech ecosystem.",
+      description: "Unify and Amplify your Tech Ecosystem.",
       features: ["Hybrid system bridging", "Built-in security", "Performance tuning"],
       // outcomes: "Accelerate time-to-market by 50%"
     },
     {
-      icon: <Shield className="w-12 h-12 text-consulting-blue" />,
-      title: "Disaster Recovery",
-      description: "Ensure business continuity, anytime.",
-      features: ["Cloud backup systems", "Guaranteed recovery targets", "Real crisis simulations"],
+      icon: <Handshake className="w-12 h-12 text-consulting-blue" />,
+      title: "Collaboration and Partnering with State Actors",
+      description: "Driving Public Sector Digital Transformation Through Institutional Capacity Building.",
+      features: ["Public Sector Digital Literacy Programs", "Critical Infrastructure Protection", "Capacity Building for State-Owned Enterprises"],
       // outcomes: "Reduce business risks by 60%"
     },
     {
-      icon: <ShoppingCart className="w-12 h-12 text-consulting-blue" />,
-      title: "Procurement Advisory",
-      description: "Stress-free procurement of tailored IT gear.",
-      features: ["Tailored vendor selection", "Cost-saving procurement plans", "Setup & training included"],
+      icon: <Landmark className="w-12 h-12 text-consulting-blue" />,
+      title: "Financial Consulting Services",
+      description: "For Local, State and Federal Government.",
+      features: ["Account Reconciliation", "Payment Recovery", "Taxes and other related matters"],
       // outcomes: "Achieve 90%+ adoption rates"
     }
   ];

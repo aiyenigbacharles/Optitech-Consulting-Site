@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Users, Scale, Lightbulb, HeartHandshake } from 'lucide-react';
 import MeetingImage from './Images/Meeting.jpg';
@@ -35,7 +34,7 @@ const About = () => {
   ];
 
   const timeline = [
-    { event: "Founded with Purpose", description: "Established under RC: 8075000 to revolutionize IT capabilities across Nigeria’s public and private sectors." },
+    { event: "Founded with Purpose", description: "Established under RC: 8075000 to revolutionize IT capabilities across Nigeria's public and private sectors." },
     { event: "Built on Trust", description: "Evolved into a premier IT consulting partner by delivering cutting-edge solutions that drive efficiency and innovation."},
     { event: "Sector Wide Expansion", description: "Expanded services to empower clients across 5+ critical industries: government, finance, healthcare, education, and telecom." },
     { event: "Global Partnerships Forged", description: "Secured alliances with industry leaders Microsoft, Cisco, AWS, and CompTIA to offer globally recognized certifications." },
@@ -50,10 +49,10 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              About <span className="font-bold text-blue-400">OptiTech Consulting</span>
+              About <span className="font-bold text-blue-400">OptiTech Consulting Limited</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              At <span className="font-bold text-blue-400">Optitech Consulting Ltd</span>, we employ a holistic approach to training and capacity
+              At <span className="font-bold text-blue-400">OptiTech Consulting Ltd</span>, we employ a holistic approach to training and capacity
               building, combining cutting-edge methodologies with practical, hands-on experiences. 
               Our programs are designed by industry subject matter experts and delivered by seasoned 
               trainers who bring real-world insights and wealth of knowledge to every session.
@@ -193,7 +192,7 @@ const About = () => {
               {[
                 {
                   name: "Asiwaju Olukanmi Ayokanmi, FCPA",
-                  position: "CEO/Managing Director",
+                  position: "Managing Director/CEO",
                   image: CEOImage                
                 },
                 // {
@@ -204,7 +203,7 @@ const About = () => {
                 // {
                 //   name: "Emily Rodriguez",
                 //   position: "Chief Operations Officer",
-                //   image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+                //   image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h-400&fit=crop&crop=face"
                 // }
               ].map((member, index) => (
                 <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -212,10 +211,10 @@ const About = () => {
                     <img 
                       src={member.image}
                       alt={member.name}
-                      className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                      className="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
                     />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                      {member.name}
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      <span className="text-base">Asiwaju Olukanmi Ayokanmi</span><span className="text-xs">, FCPA</span>
                     </h3>
                     <p className="text-consulting-blue font-medium">
                       {member.position}

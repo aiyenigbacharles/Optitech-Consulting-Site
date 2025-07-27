@@ -23,7 +23,7 @@ const Testimonials = () => {
       industry: "Technology"
     },
     {
-      quote: "We needed a digital transformation partner, not just a consultant. Optitech delivered on infrastructure, training, & ongoing support.",
+      quote: "We needed a digital transformation partner, not just a consultant. OptiTech delivered on infrastructure, training, & ongoing support.",
       name: "Tunde Oladele",
       position: "Head of ICT",
       company: "FCT Ministry of Health",
@@ -50,7 +50,7 @@ const Testimonials = () => {
       industry: "Banking"
     },
     {
-      quote: "We had compliance concerns in handling digital records. Optitech's advisory and training helped us meet NDPR standards confidently",
+      quote: "We had compliance concerns in handling digital records. OptiTech's advisory and training helped us meet NDPR standards confidently",
       name: "Dr. Yinka Abubakar",
       position: "Director of Operations",
       company: "Medfield Diagnostic Centre",
@@ -59,7 +59,7 @@ const Testimonials = () => {
       industry: "Healthcare"
     },
     {
-      quote: "They modernized our learning infrastructure with blended training that truly engaged our lecturers. Optitech gets education",
+      quote: "They modernized our learning infrastructure with blended training that truly engaged our lecturers. OptiTech gets education",
       name: "Prof. Mark Okon",
       position: "Dean of IT Faculty",
       company: "Baze University",

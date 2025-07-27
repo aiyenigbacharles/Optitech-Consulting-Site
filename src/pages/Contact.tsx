@@ -130,7 +130,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6 text-consulting-blue" />,
       title: "Email Us",
-      content: "optitechconsulting@gmail.com",
+      content: "optiTechconsultingltd@gmail.com",
       description: "Send us an email anytime",
     },
     {
@@ -142,7 +142,7 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6 text-consulting-blue" />,
       title: "Visit Us",
-      content: "19B Kampala Street",
+      content: "19B, Kampala Street",
       description: "19B, Kampala Street, Off Cairo Street, Ademola Adetokunbo Road, Wuse II, Abuja",
     },
     {
@@ -157,7 +157,7 @@ const Contact = () => {
     "Business Strategy",
     "Operational Excellence",
     "Human Resources",
-    "Digital Transformation",
+    "Capacity Building",
     "Risk Management",
     "Change Management",
     "Other",
@@ -424,7 +424,7 @@ const Contact = () => {
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full"
-                title="OptiTech Consulting Location - 19B Kampala Street, Wuse II, Abuja"
+                title="OptiTech Consulting Location - 19B, Kampala Street, Wuse II, Abuja"
               />
             </div>
             
@@ -436,7 +436,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">OptiTech Consulting Ltd</h3>
-                  <p className="text-gray-600 mb-1">19B Kampala Street</p>
+                  <p className="text-gray-600 mb-1">19B, Kampala Street</p>
                   <p className="text-gray-600 mb-1">Off Cairo Street, Ademola Adetokunbo Road</p>
                   <p className="text-gray-600 mb-3">Wuse II, Abuja, FCT</p>
                   <div className="flex flex-wrap gap-4 text-sm">

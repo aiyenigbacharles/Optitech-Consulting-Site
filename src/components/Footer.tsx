@@ -12,13 +12,13 @@ export const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-15 h-15 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center">
                                 <img 
-                  src="./Optitech logo 2.ico" 
+                  src="./OptiTech Logo - 1.ico" 
                   alt="OptiTech Logo" 
                   className="w-20 h-20 rounded-lg" 
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-consulting-blue">Optitech</span>
+                <span className="text-2xl font-bold text-consulting-blue">OptiTech</span>
                 <span className="text-base text-consulting-light-blue">Consulting Ltd</span>
               </div>
             </div>
@@ -54,7 +54,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-consulting-light-blue" />
-                <span className="text-gray-300 text-sm">optitechconsulting@gmail.com</span>
+                <span className="text-gray-300 text-sm">optitechconsultingltd@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-consulting-light-blue" />
@@ -73,7 +73,7 @@ export const Footer = () => {
         <div className="border-t border-gray-700 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 Optitech Consulting Ltd. All rights reserved.
+              © 2025 OptiTech Consulting Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-consulting-light-blue text-sm transition-colors">Privacy Policy</a>
