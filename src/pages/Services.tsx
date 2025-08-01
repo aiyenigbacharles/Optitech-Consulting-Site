@@ -215,7 +215,7 @@ const Services = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300"
+              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300 bg-transparent"
             >
               <Link to="/industries">View Case Studies</Link>
             </Button>

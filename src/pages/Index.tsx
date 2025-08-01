@@ -1,11 +1,101 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { PartnerSlider } from '@/components/PartnerSlider';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, TrendingUp, Users, Target, Zap } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+
+// Custom hook for counting animation
+const useCountUp = (end: number, duration: number = 2000, shouldStart: boolean = false) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (!shouldStart || hasStarted) return;
+    
+    setHasStarted(true);
+    let startTime: number;
+    const startValue = 0;
+    
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(easeOutQuart * (end - startValue) + startValue);
+      
+      setCount(currentCount);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, [end, duration, shouldStart, hasStarted]);
+
+  return count;
+};
+
+// Custom hook for intersection observer
+const useIntersectionObserver = (options = {}) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    }, {
+      threshold: 0.3,
+      ...options,
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return [ref, isIntersecting] as const;
+};
+
+// Counter component for individual stats
+const AnimatedCounter = ({ 
+  targetNumber, 
+  suffix = '', 
+  label, 
+  shouldAnimate 
+}: { 
+  targetNumber: number; 
+  suffix?: string; 
+  label: string; 
+  shouldAnimate: boolean;
+}) => {
+  const count = useCountUp(targetNumber, 2000, shouldAnimate);
+  
+  return (
+    <div className="text-center">
+      <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+        {count}{suffix}
+      </div>
+      <div className="text-consulting-lighter-blue text-sm md:text-base">
+        {label}
+      </div>
+    </div>
+  );
+};
 
 const Index = () => {
+  const [statsRef, isStatsVisible] = useIntersectionObserver();
+
   const features = [
     {
       icon: <TrendingUp className="w-8 h-8 text-consulting-blue" />,
@@ -15,7 +105,7 @@ const Index = () => {
     {
       icon: <Users className="w-8 h-8 text-consulting-blue" />,
       title: "Expert Team",
-      description: "Industry-certified experts (Microsoft, Cisco, AWS, CompTIA) with sector-specific insights for finance, healthcare, government, and education"
+      description: "Industry-certified experts (Microsoft, Cisco, AWS, CompTIA) with sector-specific insights for finance, healthcare, government, and education"
     },
     {
       icon: <Target className="w-8 h-8 text-consulting-blue" />,
@@ -25,21 +115,21 @@ const Index = () => {
     {
       icon: <Zap className="w-8 h-8 text-consulting-blue" />,
       title: "Rapid Implementation",
-      description: "Flexible training options, efficient procurement services, and agile consulting solutions that combine cutting-edge methodologies with actionable strategies."
+      description: "Flexible training options, efficient procurement services, and agile consulting solutions that combine cutting-edge methodologies with actionable strategies."
     }
   ];
 
   const stats = [
-    { number: "5+", label: "Projects Completed" },
-    { number: "98%", label: "Client Satisfaction" },
-    { number: "50+", label: "Professionals Trained" },
-    { number: "Decades", label: "Years Experience" }
+    { targetNumber: 5, suffix: '+', label: "Projects Completed" },
+    { targetNumber: 98, suffix: '%', label: "Client Satisfaction" },
+    { targetNumber: 50, suffix: '+', label: "Professionals Trained" },
+    { targetNumber: 0, suffix: '', customDisplay: 'Decades', label: "Years Experience" }
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-consulting-lightest-blue via-white to-consulting-lighter-blue overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 via-gray-200 to-blue-100 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-consulting-blue/10 rounded-full animate-float"></div>
@@ -100,34 +190,34 @@ const Index = () => {
                 alt="Professional consulting team"
                 className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
               />
-              {/* <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Average Growth</p>
-                    <p className="text-2xl font-bold text-gray-900">+95%</p>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-consulting-blue">
+      <section ref={statsRef} className="py-16 bg-consulting-blue">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-consulting-lighter-blue text-sm md:text-base">
-                  {stat.label}
-                </div>
+              <div key={index}>
+                {stat.customDisplay ? (
+                  <div className="text-center">
+                    <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                      {stat.customDisplay}
+                    </div>
+                    <div className="text-consulting-lighter-blue text-sm md:text-base">
+                      {stat.label}
+                    </div>
+                  </div>
+                ) : (
+                  <AnimatedCounter
+                    targetNumber={stat.targetNumber}
+                    suffix={stat.suffix}
+                    label={stat.label}
+                    shouldAnimate={isStatsVisible}
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -193,7 +283,7 @@ const Index = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300"
+              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300 bg-transparent"
             >
               <Link to="/about">Learn About Us</Link>
             </Button>

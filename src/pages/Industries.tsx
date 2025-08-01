@@ -143,13 +143,6 @@ const Industries = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-consulting-lightest-blue p-4 rounded-lg">
-                    {/* <h4 className="font-semibold text-consulting-blue mb-2">Success Story:</h4> */}
-                    <p className="text-sm text-gray-700">
-                      {industry.caseStudy}
-                    </p>
-                  </div>
-
                   <Button 
                     asChild
                     className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300"
@@ -302,7 +295,7 @@ const Industries = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300"
+              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300 bg-transparent"
             >
               <Link to="/services">View Our Services</Link>
             </Button>

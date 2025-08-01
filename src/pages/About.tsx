@@ -2,9 +2,99 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Star, Users, Scale, Lightbulb, HeartHandshake } from 'lucide-react';
 import MeetingImage from './Images/Meeting.jpg';
 import CEOImage from './Images/CEO 1.png';
+import { useState, useEffect, useRef } from 'react';
 
+// Custom hook for counting animation
+const useCountUp = (end: number, duration: number = 2000, shouldStart: boolean = false) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (!shouldStart || hasStarted) return;
+    
+    setHasStarted(true);
+    let startTime: number;
+    const startValue = 0;
+    
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(easeOutQuart * (end - startValue) + startValue);
+      
+      setCount(currentCount);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, [end, duration, shouldStart, hasStarted]);
+
+  return count;
+};
+
+// Custom hook for intersection observer
+const useIntersectionObserver = (options = {}) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    }, {
+      threshold: 0.3,
+      ...options,
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return [ref, isIntersecting] as const;
+};
+
+// Counter component for individual stats
+const AnimatedCounter = ({ 
+  targetNumber, 
+  suffix = '', 
+  label, 
+  shouldAnimate 
+}: { 
+  targetNumber: number; 
+  suffix?: string; 
+  label: string; 
+  shouldAnimate: boolean;
+}) => {
+  const count = useCountUp(targetNumber, 2000, shouldAnimate);
+  
+  return (
+    <div className="text-center">
+      <div className="text-4xl font-bold text-consulting-blue mb-2">
+        {count}{suffix}
+      </div>
+      <div className="text-gray-600">
+        {label}
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
+  const [statsRef, isStatsVisible] = useIntersectionObserver();
+
   const values = [
     {
       icon: <Star className="w-8 h-8 text-consulting-blue" />,
@@ -42,6 +132,12 @@ const About = () => {
     { event: "Anchored in Core Values", description: "Sustained growth through unwavering commitment to integrity, excellence, and client-centric innovation." }
   ];
 
+  const stats = [
+    { targetNumber: 0, suffix: '', customDisplay: 'Decades', label: "Years Experience" },
+    { targetNumber: 100, suffix: '+', label: "Successful Projects" },
+    { targetNumber: 50, suffix: '+', label: "Clients Served" }
+  ];
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -57,19 +153,28 @@ const About = () => {
               Our programs are designed by industry subject matter experts and delivered by seasoned 
               trainers who bring real-world insights and wealth of knowledge to every session.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-consulting-blue mb-2">Decades</div>
-                <div className="text-gray-600">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-consulting-blue mb-2">100+</div>
-                <div className="text-gray-600">Successful Projects</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-consulting-blue mb-2">50+</div>
-                <div className="text-gray-600">Clients Served</div>
-              </div>
+            <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {stats.map((stat, index) => (
+                <div key={index}>
+                  {stat.customDisplay ? (
+                    <div className="text-center">
+                      <div className="text-4xl font-bold text-consulting-blue mb-2">
+                        {stat.customDisplay}
+                      </div>
+                      <div className="text-gray-600">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ) : (
+                    <AnimatedCounter
+                      targetNumber={stat.targetNumber}
+                      suffix={stat.suffix}
+                      label={stat.label}
+                      shouldAnimate={isStatsVisible}
+                    />
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
