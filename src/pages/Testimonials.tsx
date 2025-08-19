@@ -1,8 +1,11 @@
+// Testimonials.tsx
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Quote, Star, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import CountUp from 'react-countup'; // --- 1. IMPORT CountUp ---
 
 // Use import.meta.glob to import all images from the Images folder
 // The key will be the path, and the value will be a dynamic import function
@@ -80,11 +83,14 @@ const Testimonials = () => {
     }
   }, [isPaused, testimonials.length]);
 
+  // --- 2. ADJUST the stats array for CountUp properties ---
+  // We separate the numerical value, suffixes, and decimal points
+  // to give the CountUp component full control over the animation.
   const stats = [
-    { number: "98%", label: "Client Satisfaction Rate" },
-    { number: "4.9/5", label: "Average Rating" },
-    { number: "95%", label: "Would Recommend" },
-    { number: "87%", label: "Repeat Clients" }
+    { end: 98, suffix: "%", label: "Client Satisfaction Rate" },
+    { end: 4.9, decimals: 1, suffix: "/5", label: "Average Rating" },
+    { end: 95, suffix: "%", label: "Would Recommend" },
+    { end: 87, suffix: "%", label: "Repeat Clients" }
   ];
 
   const renderStars = (rating: number) => {
@@ -121,7 +127,17 @@ const Testimonials = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-consulting-blue mb-2">{stat.number}</div>
+                  {/* --- 3. REPLACE the static number with the CountUp component --- */}
+                  <div className="text-4xl font-bold text-consulting-blue mb-2">
+                    <CountUp
+                      end={stat.end}
+                      duration={2.5}
+                      decimals={stat.decimals || 0}
+                      suffix={stat.suffix}
+                      enableScrollSpy // This makes the animation start when the element is visible
+                      scrollSpyOnce // The animation will only run once
+                    />
+                  </div>
                   <div className="text-sm text-gray-600">{stat.label}</div>
                 </div>
               ))}

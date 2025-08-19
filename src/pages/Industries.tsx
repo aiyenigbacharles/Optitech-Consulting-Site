@@ -1,7 +1,10 @@
+// Industries.tsx
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Building, Heart, GraduationCap, Smartphone, Landmark, Building2, ArrowRight, CheckCircle } from 'lucide-react';
+import CountUp from 'react-countup'; // --- 1. IMPORT CountUp ---
 
 // Main image for the case study
 import MeetingImage from './Images/workshop2.jpg';
@@ -65,11 +68,13 @@ const Industries = () => {
     }
   ];
 
+  // --- 2. ADJUST the successMetrics array for CountUp ---
+  // We change `value` to `end` and add a `suffix` property
   const successMetrics = [
-    { metric: <b>Industry Certifications</b>, value: "10+", description: "Microsoft, CompTIA, AWS, Cisco..." },
-    { metric: <b>Professionals Trained</b>, value: "50+", description: "Our track record of success & measurable improvements" },
-    { metric: <b>Successful IT Procurements</b>, value: "50+", description: "End-to-End procurement services & strong vendor partnerships" },
-    { metric: <b>Years Team Experience</b>, value: "10+", description: "The combined team experience from our professionals & seasoned trainers." }
+    { metric: <b>Industry Certifications</b>, end: 10, suffix: "+", description: "Microsoft, CompTIA, AWS, Cisco..." },
+    { metric: <b>Professionals Trained</b>, end: 50, suffix: "+", description: "Our track record of success & measurable improvements" },
+    { metric: <b>Successful IT Procurements</b>, end: 50, suffix: "+", description: "End-to-End procurement services & strong vendor partnerships" },
+    { metric: <b>Years Team Experience</b>, end: 10, suffix: "+", description: "The combined team experience from our professionals & seasoned trainers." }
   ];
   
   const trainingGallery = [
@@ -100,7 +105,16 @@ const Industries = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
               {successMetrics.map((item, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-consulting-blue mb-2">{item.value}</div>
+                  {/* --- 3. REPLACE the static number with the CountUp component --- */}
+                  <div className="text-4xl font-bold text-consulting-blue mb-2">
+                    <CountUp
+                      end={item.end}
+                      duration={2.5}
+                      suffix={item.suffix}
+                      enableScrollSpy
+                      scrollSpyOnce
+                    />
+                  </div>
                   <div className="text-sm font-medium text-gray-900">{item.metric}</div>
                   <div className="text-xs text-gray-600">{item.description}</div>
                 </div>
