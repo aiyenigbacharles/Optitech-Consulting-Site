@@ -47,8 +47,8 @@ export const Header = () => {
             </div>
             <div className="flex items-baseline space-x-3">
               <span className="text-4xl font-bold text-consulting-blue">OptiTech Consulting Ltd</span>
-              {/* <span className="text-2xl text-consulting-blue font-medium">Consulting Ltd</span>
-              <span className="text-sm text-red-500 font-medium ml-2">RC: 8075000</span> */}
+              {/* <span className="text-2xl text-consulting-blue font-medium">Consulting Ltd</span> */}
+              <span className="text-sm text-red-500 font-medium ml-2">RC: 8075000</span>
             </div>
           </Link>
 
