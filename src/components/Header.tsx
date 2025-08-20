@@ -37,7 +37,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           {/* Logo - Takes up horizontal space */}
-          <Link to="/" className="flex items-center space-x-6 flex-1 max-w-2xl">
+          <Link to="/" className="flex items-center space-x-6 flex-1 max-w-4xl">
             <div className="w-16 h-16 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center flex-shrink-0">
                 <img 
                   src="./OptiTech Logo - 1.ico" 
@@ -46,9 +46,9 @@ export const Header = () => {
                 />
             </div>
             <div className="flex items-baseline space-x-3">
-              <span className="text-4xl font-bold text-consulting-blue">OptiTech Consulting Ltd</span>
+              <span className="text-5xl font-bold text-consulting-blue">OptiTech Consulting Ltd</span>
               {/* <span className="text-2xl text-consulting-blue font-medium">Consulting Ltd</span> */}
-              <span className="text-sm text-red-500 font-medium ml-2">RC: 8075000</span>
+              {/* <span className="text-sm text-red-500 font-medium ml-2">RC: 8075000</span> */}
             </div>
           </Link>
 
