@@ -36,32 +36,32 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
-          {/* Logo - Takes up horizontal space */}
-          <Link to="/" className="flex items-center space-x-6 flex-1 max-w-4xl">
-            <div className="w-16 h-16 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center flex-shrink-0">
+          {/* Logo - Reduced size and improved alignment */}
+          <Link to="/" className="flex items-center space-x-4 flex-shrink-0">
+            <div className="w-16 h-16 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center">
                 <img 
                   src="./OptiTech Logo - 1.ico" 
                   alt="OptiTech Logo" 
                   className="w-16 h-16 rounded-lg" 
                 />
             </div>
-            <div className="flex items-baseline space-x-3">
-              <span className="text-5xl font-bold text-consulting-blue">OptiTech Consulting Ltd</span>
-              {/* <span className="text-2xl text-consulting-blue font-medium">Consulting Ltd</span> */}
-              {/* <span className="text-sm text-red-500 font-medium ml-2">RC: 8075000</span> */}
+            <div className="flex items-center">
+              <span className="text-4xl font-bold text-consulting-blue whitespace-nowrap">
+                OptiTech Consulting Ltd
+              </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation - More compact */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          {/* Desktop Navigation - Improved spacing and alignment */}
+          <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-consulting-blue whitespace-nowrap ${
-                  isActive(item.href) 
-                    ? 'text-consulting-blue border-b-2 border-consulting-blue pb-1' 
-                    : 'text-gray-700'
+                className={`text-base font-medium transition-colors duration-200 hover:text-consulting-blue whitespace-nowrap border-b-2 pb-1 ${
+                  isActive(item.href)
+                    ? 'border-consulting-blue text-consulting-blue'
+                    : 'border-transparent text-gray-700'
                 }`}
               >
                 {item.name}
@@ -69,15 +69,17 @@ export const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button - Hidden on smaller screens to save space */}
-          <div className="hidden xl:block">
-            <Button 
-              asChild
-              className="bg-consulting-blue hover:bg-consulting-light-blue text-white px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105"
-            >
-              <Link to="/contact">Get Started</Link>
-            </Button>
-          </div>
+          {/* CTA Button - Hide on Contact page */}
+          {location.pathname !== '/contact' && (
+            <div className="hidden xl:block flex-shrink-0">
+              <Button 
+                asChild
+                className="bg-consulting-blue hover:bg-consulting-light-blue text-white px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105"
+              >
+                <Link to="/contact">Get Started</Link>
+              </Button>
+            </div>
+          )}
 
           {/* Mobile Menu Button */}
           <button
@@ -108,14 +110,17 @@ export const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 py-3">
-                <Button 
-                  asChild
-                  className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white"
-                >
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Get Started</Link>
-                </Button>
-              </div>
+              {/* Hide Get Started button in mobile menu when on Contact page */}
+              {location.pathname !== '/contact' && (
+                <div className="px-4 py-3">
+                  <Button 
+                    asChild
+                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white"
+                  >
+                    <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Get Started</Link>
+                  </Button>
+                </div>
+              )}
             </nav>
           </div>
         )}

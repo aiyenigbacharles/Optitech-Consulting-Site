@@ -72,12 +72,12 @@ const Testimonials = () => {
     }
   ];
 
-  // Auto-scroll functionality
+  // Auto-scroll functionality - REDUCED from 5000ms to 3000ms (3 seconds)
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
         setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-      }, 5000); // Change testimonial every 5 seconds
+      }, 3000); // Changed from 5000 to 3000 - now changes every 3 seconds
 
       return () => clearInterval(interval);
     }
@@ -107,8 +107,8 @@ const Testimonials = () => {
   const handleDotClick = (index: number) => {
     setActiveTestimonial(index);
     setIsPaused(true);
-    // Resume auto-scroll after 10 seconds of user inactivity
-    setTimeout(() => setIsPaused(false), 10000);
+    // Resume auto-scroll after 8 seconds of user inactivity (reduced from 10)
+    setTimeout(() => setIsPaused(false), 8000);
   };
 
   return (
@@ -213,7 +213,7 @@ const Testimonials = () => {
             {/* Pause/Resume Indicator */}
             <div className="text-center mt-4">
               <p className="text-sm text-gray-500">
-                {/* {isPaused ? "Auto-scroll paused" : "Auto-scrolling every 5 seconds"} */}
+                {/* {isPaused ? "Auto-scroll paused" : "Auto-scrolling every 3 seconds"} */}
               </p>
             </div>
           </div>
