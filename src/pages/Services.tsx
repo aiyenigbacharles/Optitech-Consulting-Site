@@ -74,26 +74,26 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-16 sm:pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Our Consulting Services
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 px-4 leading-relaxed">
             At <span className="font-bold text-blue-400">OptiTech Consulting Ltd</span>, we go beyond temporary fixes to deliver future-proof IT strategies 
             that drive measurable growth. Our consulting services bridge the gap between your business objectives and cutting-edge technology.
             </p>
             <Button 
               asChild
               size="lg"
-              className="bg-consulting-blue hover:bg-consulting-light-blue text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-consulting-blue hover:bg-consulting-light-blue text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg w-full sm:w-auto max-w-xs sm:max-w-none"
             >
               <Link to="/contact">
                 Start Your Project
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
             </Button>
           </div>
@@ -101,47 +101,41 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-                <CardHeader className="text-center pb-4">
-                  <div className="mb-4 flex justify-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-consulting-lighter-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <CardHeader className="text-center pb-3 sm:pb-4">
+                  <div className="mb-3 sm:mb-4 flex justify-center">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-consulting-lighter-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       {service.icon}
                     </div>
                   </div>
-                  <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
+                  <CardTitle className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 leading-tight">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-sm sm:text-base text-gray-600 text-center">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 text-center leading-relaxed">
                     {service.description}
                   </p>
                   
                   <div>
-                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
+                    <h4 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-2 sm:mb-3">Key Features:</h4>
+                    <ul className="space-y-1.5 sm:space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">{feature}</span>
+                        <li key={idx} className="flex items-start space-x-2">
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs sm:text-sm text-gray-600 leading-relaxed">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* <div className="bg-consulting-lightest-blue p-4 rounded-lg">
-                    <p className="text-sm font-medium text-consulting-blue">
-                      Expected Outcome: {service.outcomes}
-                    </p>
-                  </div> */}
-
                   <Button 
                     asChild
-                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300 text-sm sm:text-base"
+                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300 text-xs sm:text-sm md:text-base py-2 sm:py-3"
                   >
                     <Link to="/contact">
                       Inquire About This Service
@@ -155,32 +149,32 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Proven Process</h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">Our Proven Process</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               We follow a structured approach that ensures consistent results and delivers tailored solutions with precision, transparency, and measurable impact.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 md:gap-8">
             {process.map((step, index) => (
               <div key={index} className="relative">
                 {/* Connection line */}
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-consulting-light-blue z-0"></div>
+                  <div className="hidden lg:block absolute top-8 sm:top-10 left-full w-full h-0.5 bg-consulting-light-blue z-0"></div>
                 )}
                 
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative z-10">
                   <CardContent className="p-4 sm:p-6 text-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-consulting-blue text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-consulting-blue text-white rounded-full flex items-center justify-center text-sm sm:text-base md:text-lg lg:text-xl font-bold mx-auto mb-3 sm:mb-4">
                       {step.step}
                     </div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2 leading-tight">
                       {step.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-600">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                       {step.description}
                     </p>
                   </CardContent>
@@ -192,30 +186,30 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-consulting-blue to-consulting-light-blue">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-consulting-blue to-consulting-light-blue">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Ready to Get Started?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-consulting-lighter-blue mb-8 max-w-2xl mx-auto px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-consulting-lighter-blue mb-6 sm:mb-8 max-w-2xl mx-auto px-4 leading-relaxed">
             Let's discuss how our consulting services can help you achieve your business objectives and drive sustainable growth.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
             <Button 
               asChild
               size="lg"
-              className="bg-white text-consulting-blue hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-white text-consulting-blue hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg w-full sm:w-auto"
             >
               <Link to="/contact">
                 Schedule a Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
             </Button>
             <Button 
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-consulting-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-consulting-blue px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg rounded-lg transition-all duration-300 bg-transparent w-full sm:w-auto"
             >
               <Link to="/industries">View Case Studies</Link>
             </Button>
