@@ -192,12 +192,12 @@ const Contact = () => {
       <section className="py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">Let's Start Your Transformation</h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">Let's Start Your Transformation</h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 px-4">
               Ready to unlock your business potential? Get in touch with our expert consultants and discover how we can
               help you achieve extraordinary results.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4 text-green-500" />
                 <span>Free initial consultation</span>
@@ -218,17 +218,17 @@ const Contact = () => {
       {/* Main Contact Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card className="border-0 shadow-xl">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">Send Us a Message</CardTitle>
-                  <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
+                  <CardTitle className="text-xl sm:text-2xl text-gray-900">Send Us a Message</CardTitle>
+                  <p className="text-sm sm:text-base text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <CardContent className="space-y-4 sm:space-y-6">
+                  <form ref={form} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name *</Label>
                         <Input
@@ -251,7 +251,7 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="email">Email Address *</Label>
                         <Input
@@ -275,7 +275,7 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="company">Company Name *</Label>
                         <Input
@@ -310,7 +310,7 @@ const Contact = () => {
                         name="message"
                         placeholder="Tell us about your project, challenges, or goals. The more details you provide, the better we can assist you."
                         required
-                        rows={6}
+                        rows={4}
                         className="border-gray-300 focus:border-consulting-blue"
                       />
                     </div>
@@ -335,7 +335,7 @@ const Contact = () => {
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300"
+                      className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300 text-sm sm:text-base"
                     >
                       {isSubmitting ? (
                         <>
@@ -355,20 +355,20 @@ const Contact = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-6 lg:space-y-8 mt-8 lg:mt-0">
               <Card className="border-0 shadow-xl">
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900">Get in Touch</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl text-gray-900">Get in Touch</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-consulting-lighter-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-consulting-lighter-blue rounded-lg flex items-center justify-center flex-shrink-0">
                         {info.icon}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
-                        <p className="text-consulting-blue font-medium">{info.content}</p>
+                        <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">{info.title}</h3>
+                        <p className="text-consulting-blue font-medium text-sm sm:text-base">{info.content}</p>
                         <p className="text-sm text-gray-600">{info.description}</p>
                       </div>
                     </div>
@@ -378,24 +378,24 @@ const Contact = () => {
 
               {/* Quick Stats */}
               <Card className="border-0 shadow-xl bg-gradient-to-br from-consulting-blue to-consulting-light-blue text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Why Choose Us?</h3>
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold mb-4">Why Choose Us?</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span>Response Time</span>
-                      <span className="font-bold">{"< 24 hours"}</span>
+                      <span className="text-sm sm:text-base">Response Time</span>
+                      <span className="font-bold text-sm sm:text-base">{"< 24 hours"}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Success Rate</span>
-                      <span className="font-bold">98%</span>
+                      <span className="text-sm sm:text-base">Success Rate</span>
+                      <span className="font-bold text-sm sm:text-base">98%</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Client Satisfaction</span>
-                      <span className="font-bold">4.9/5</span>
+                      <span className="text-sm sm:text-base">Client Satisfaction</span>
+                      <span className="font-bold text-sm sm:text-base">4.9/5</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Projects Completed</span>
-                      <span className="font-bold">500+</span>
+                      <span className="text-sm sm:text-base">Projects Completed</span>
+                      <span className="font-bold text-sm sm:text-base">500+</span>
                     </div>
                   </div>
                 </CardContent>
@@ -409,8 +409,8 @@ const Contact = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Location</h2>
-            <p className="text-lg text-gray-600">We invite you to visit us at this convenient location.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Our Location</h2>
+            <p className="text-base sm:text-lg text-gray-600 px-4">We invite you to visit us at this convenient location.</p>
           </div>
 
           <Card className="border-0 shadow-xl overflow-hidden max-w-4xl mx-auto">
@@ -418,27 +418,27 @@ const Contact = () => {
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8545288897317!2d7.478094275691587!3d9.077014388234147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0af888b76257%3A0x980a87fd823607ac!2s19b%20Kampala%20St%2C%20Wuse%202%2C%20Abuja%20904101%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1753435890368!5m2!1sen!2sng" 
                 width="100%" 
-                height="450" 
+                height="300"
                 style={{ border: 0 }} 
                 allowFullScreen
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full"
+                className="w-full sm:h-96 md:h-[450px]"
                 title="OptiTech Consulting Location - 19B, Kampala Street, Wuse II, Abuja"
               />
             </div>
             
             {/* Location Info Overlay */}
-            <div className="bg-white p-6 border-t">
+            <div className="bg-white p-4 sm:p-6 border-t">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-consulting-lighter-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-consulting-lighter-blue rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-consulting-blue" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">OptiTech Consulting Ltd</h3>
-                  <p className="text-gray-600 mb-1">19B, Kampala Street</p>
-                  <p className="text-gray-600 mb-1">Off Cairo Street, Ademola Adetokunbo Road</p>
-                  <p className="text-gray-600 mb-3">Wuse II, Abuja, FCT</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">OptiTech Consulting Ltd</h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-1">19B, Kampala Street</p>
+                  <p className="text-sm sm:text-base text-gray-600 mb-1">Off Cairo Street, Ademola Adetokunbo Road</p>
+                  <p className="text-sm sm:text-base text-gray-600 mb-3">Wuse II, Abuja, FCT</p>
                   <div className="flex flex-wrap gap-4 text-sm">
                     <div className="flex items-center space-x-2 text-consulting-blue">
                       <Phone className="w-4 h-4" />
@@ -460,18 +460,18 @@ const Contact = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
               Get quick answers to common questions about our consulting services.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             {faqData.map((faq, index) => (
               <Card key={index} className="border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}

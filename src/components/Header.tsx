@@ -35,18 +35,18 @@ export const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo - Reduced size and improved alignment */}
-          <Link to="/" className="flex items-center space-x-4 flex-shrink-0">
-            <div className="w-16 h-16 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center">
                 <img 
                   src="./OptiTech Logo - 1.ico" 
                   alt="OptiTech Logo" 
-                  className="w-16 h-16 rounded-lg" 
+                  className="w-12 h-12 md:w-16 md:h-16 rounded-lg" 
                 />
             </div>
             <div className="flex items-center">
-              <span className="text-3xl font-bold text-consulting-blue whitespace-nowrap">
+              <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-consulting-blue whitespace-nowrap">
                 OptiTech Consulting Ltd
               </span>
             </div>
@@ -96,7 +96,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t shadow-lg">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t shadow-lg z-50">
             <nav className="flex flex-col py-4">
               {navigation.map((item) => (
                 <Link

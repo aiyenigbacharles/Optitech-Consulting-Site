@@ -95,18 +95,18 @@ const Industries = () => {
       <section className="py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Industries We Serve
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 px-4">
               At <span className="font-bold text-blue-400">OptiTech Consulting Ltd</span>, we deliver precision-engineered IT solutions tailored to your industry's unique challenges, 
               combining cross-sector expertise with deep regulatory knowledge to drive efficiency, security, and innovation.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-8 md:mt-12">
               {successMetrics.map((item, index) => (
                 <div key={index} className="text-center">
                   {/* --- 3. REPLACE the static number with the CountUp component --- */}
-                  <div className="text-4xl font-bold text-consulting-blue mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-consulting-blue mb-2">
                     <CountUp
                       end={item.end}
                       duration={2.5}
@@ -115,7 +115,7 @@ const Industries = () => {
                       scrollSpyOnce
                     />
                   </div>
-                  <div className="text-sm font-medium text-gray-900">{item.metric}</div>
+                  <div className="text-xs sm:text-sm font-medium text-gray-900">{item.metric}</div>
                   <div className="text-xs text-gray-600">{item.description}</div>
                 </div>
               ))}
@@ -127,26 +127,26 @@ const Industries = () => {
       {/* Industries Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {industries.map((industry, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                 <CardHeader className="text-center pb-4">
                   <div className="mb-4 flex justify-center">
-                    <div className="w-20 h-20 bg-consulting-lighter-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-consulting-lighter-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       {industry.icon}
                     </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900">
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                     {industry.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <p className="text-gray-600 text-center">
+                  <p className="text-sm sm:text-base text-gray-600 text-center">
                     {industry.description}
                   </p>
                   
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Common Challenges:</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-3">Common Challenges:</h4>
                     <ul className="space-y-2">
                       {industry.challenges.map((challenge, idx) => (
                         <li key={idx} className="flex items-center space-x-2">
@@ -159,7 +159,7 @@ const Industries = () => {
 
                   <Button 
                     asChild
-                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300"
+                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300 text-sm sm:text-base"
                   >
                     <Link to="/contact">
                       Discuss Your Project
@@ -177,8 +177,8 @@ const Industries = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Workshops & Training</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Workshops & Training</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                 At <span className="font-bold text-blue-400">OptiTech Consulting Ltd</span>, we deliver cutting-edge workshops and training programs designed to empower 
                 professionals, teams, and organizations with the skills they need to thrive in a fast-paced digital world. 
                 Below is a case study of one of our successful training programs.
@@ -186,24 +186,24 @@ const Industries = () => {
             </div>
 
             <Card className="border-0 shadow-xl overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative flex items-center justify-center bg-gray-100 p-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="relative flex items-center justify-center bg-gray-100 p-4 order-2 lg:order-1">
                   <img 
                     src={MeetingImage} 
                     alt="Case study visualization"
-                    className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                    className="w-full h-64 lg:h-full object-cover rounded-lg shadow-lg"
                   />
                 </div>
-                <CardContent className="p-8 lg:p-12">
+                <CardContent className="p-6 sm:p-8 lg:p-12 order-1 lg:order-2">
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Building Capacity to Enhance Transparency, Efficiency & 
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">Building Capacity to Enhance Transparency, Efficiency & 
                         Accountability in Procurement processes through the Adoption of Science, Technology & Innovation (STI).</h3>
-                      <p className="text-xl font-bold text-blue-500">National Centre for Technology Management (NACETEM)</p>
+                      <p className="text-base sm:text-lg md:text-xl font-bold text-blue-500">National Centre for Technology Management (NACETEM)</p>
                       {/* <p className="text-consulting-black font-medium">Training covered cybersecurity awareness, cloud computing, & health information systems.</p> */}
                     </div>
                     
-                    <p className="text-gray-600">
+                    <p className="text-sm sm:text-base text-gray-600">
                       Facilitated by <span className="font-bold text-blue-400">OptiTech Consulting Ltd</span>, the training was held at NARC, Abuja. It addressed critical challenges in government procurement, 
                       where outdated processes, lack of digital literacy, and weak compliance mechanisms affected transparency and service delivery. 
                       By introducing tech-driven procurement frameworks, the workshop improved the officers' capacity to adopt STI in procurement reform.
@@ -223,26 +223,26 @@ const Industries = () => {
                     <div className="space-y-3">
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700">Introduction to Technology-Enabled Procurement Platforms</span>
+                        <span className="text-sm sm:text-base text-gray-700">Introduction to Technology-Enabled Procurement Platforms</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700"> Strategies for Reducing Procurement Fraud through STI</span>
+                        <span className="text-sm sm:text-base text-gray-700"> Strategies for Reducing Procurement Fraud through STI</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700">Digital Tools for Transparent Vendor Management</span>
+                        <span className="text-sm sm:text-base text-gray-700">Digital Tools for Transparent Vendor Management</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="w-5 h-5 text-green-500" />
-                        <span className="text-gray-700">Workshops on Compliance, Accountability, & Open Contracting</span>
+                        <span className="text-sm sm:text-base text-gray-700">Workshops on Compliance, Accountability, & Open Contracting</span>
                       </div>
                     </div>
                     
                     <Button 
                       asChild
                       size="lg"
-                      className="bg-consulting-blue hover:bg-consulting-light-blue text-white"
+                      className="bg-consulting-blue hover:bg-consulting-light-blue text-white w-full sm:w-auto"
                     >
                       <Link to="/contact">
                         Start Your Transformation
@@ -261,15 +261,15 @@ const Industries = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Glimpses From Our Training Sessions</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Glimpses From Our Training Sessions</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                   We believe in practical, hands-on learning experiences that create lasting impact. 
                   Here's a look inside our dynamic and collaborative workshops.
               </p>
           </div>
         </div>
 
-        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
+        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_64px,_black_calc(100%-64px),transparent_100%)] sm:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group">
             <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-scroll group-hover:[animation-play-state:paused]">
                 {/* Render the images twice for the infinite loop effect */}
                 {[...trainingGallery, ...trainingGallery].map((item, index) => (
@@ -277,7 +277,7 @@ const Industries = () => {
                         <img 
                             src={item.imgSrc} 
                             alt={item.alt}
-                            className="h-64 w-auto rounded-lg shadow-md"
+                            className="h-48 sm:h-56 md:h-64 w-auto rounded-lg shadow-md"
                         />
                     </li>
                 ))}
@@ -288,17 +288,17 @@ const Industries = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-consulting-blue to-consulting-light-blue">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Industry?
           </h2>
-          <p className="text-xl text-consulting-lighter-blue mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-consulting-lighter-blue mb-8 max-w-2xl mx-auto px-4">
             Join leading companies in your industry who have achieved remarkable results with our consulting expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild
               size="lg"
-              className="bg-white text-consulting-blue hover:bg-gray-100 px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-white text-consulting-blue hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Link to="/contact">
                 Discuss Your Project
@@ -309,7 +309,7 @@ const Industries = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-consulting-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 bg-transparent"
             >
               <Link to="/services">View Our Services</Link>
             </Button>

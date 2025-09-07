@@ -117,18 +117,18 @@ const Testimonials = () => {
       <section className="py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Client Success Stories
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 px-4">
               Discover how OptiTech Consulting has helped businesses across industries 
               achieve remarkable transformations and sustainable growth.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-8 md:mt-12">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   {/* --- 3. REPLACE the static number with the CountUp component --- */}
-                  <div className="text-4xl font-bold text-consulting-blue mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-consulting-blue mb-2">
                     <CountUp
                       end={stat.end}
                       duration={2.5}
@@ -138,7 +138,7 @@ const Testimonials = () => {
                       scrollSpyOnce // The animation will only run once
                     />
                   </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -155,9 +155,9 @@ const Testimonials = () => {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              <CardContent className="p-12 relative">
+              <CardContent className="p-6 sm:p-8 md:p-12 relative">
                 <div className="absolute top-8 left-8">
-                  <Quote className="w-12 h-12 text-consulting-blue/20" />
+                  <Quote className="w-8 h-8 sm:w-12 sm:h-12 text-consulting-blue/20" />
                 </div>
                 
                 <div className="text-center space-y-8">
@@ -165,31 +165,31 @@ const Testimonials = () => {
                     {renderStars(testimonials[activeTestimonial].rating)}
                   </div>
                   
-                  <blockquote className="text-2xl md:text-3xl text-gray-900 font-medium leading-relaxed transition-all duration-500 ease-in-out">
+                  <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium leading-relaxed transition-all duration-500 ease-in-out">
                     "{testimonials[activeTestimonial].quote}"
                   </blockquote>
                   
-                  <div className="flex items-center justify-center space-x-4 transition-all duration-500 ease-in-out">
+                  <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 transition-all duration-500 ease-in-out">
                     <img
                       src={testimonials[activeTestimonial].image}
                       alt={testimonials[activeTestimonial].name}
-                      className="w-16 h-16 rounded-full object-cover"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
                     />
-                    <div className="text-left">
-                      <div className="font-semibold text-gray-900 text-lg">
+                    <div className="text-center sm:text-left">
+                      <div className="font-semibold text-gray-900 text-base sm:text-lg">
                         {testimonials[activeTestimonial].name}
                       </div>
-                      <div className="text-consulting-blue font-medium">
+                      <div className="text-sm sm:text-base text-consulting-blue font-medium">
                         {testimonials[activeTestimonial].position}
                       </div>
-                      <div className="text-gray-600">
+                      <div className="text-sm sm:text-base text-gray-600">
                         {testimonials[activeTestimonial].company}
                       </div>
                     </div>
                   </div>
                   
                   <div className="inline-block bg-consulting-lighter-blue px-4 py-2 rounded-full">
-                    <span className="text-consulting-blue font-medium text-sm">
+                    <span className="text-consulting-blue font-medium text-xs sm:text-sm">
                       {testimonials[activeTestimonial].industry}
                     </span>
                   </div>
@@ -224,28 +224,28 @@ const Testimonials = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Read more success stories from businesses that have transformed with our help.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardContent className="p-6 space-y-4">
+                <CardContent className="p-4 sm:p-6 space-y-4">
                   <div className="flex justify-between items-start">
                     <div className="flex space-x-1">
                       {renderStars(testimonial.rating)}
                     </div>
                     <div className="bg-consulting-lighter-blue px-3 py-1 rounded-full">
-                      <span className="text-consulting-blue font-medium text-xs">
+                      <span className="text-consulting-blue font-medium text-xs sm:text-sm">
                         {testimonial.industry}
                       </span>
                     </div>
                   </div>
                   
-                  <blockquote className="text-gray-700 leading-relaxed">
+                  <blockquote className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     "{testimonial.quote.length > 150 ? testimonial.quote.substring(0, 150) + '...' : testimonial.quote}"
                   </blockquote>
                   
@@ -253,16 +253,16 @@ const Testimonials = () => {
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0"
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">
+                      <div className="font-semibold text-gray-900 text-sm sm:text-base">
                         {testimonial.name}
                       </div>
-                      <div className="text-sm text-consulting-blue">
+                      <div className="text-xs sm:text-sm text-consulting-blue">
                         {testimonial.position}
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-xs sm:text-sm text-gray-600">
                         {testimonial.company}
                       </div>
                     </div>
@@ -277,17 +277,17 @@ const Testimonials = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-consulting-blue to-consulting-light-blue">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             Join Our Success Stories
           </h2>
-          <p className="text-xl text-consulting-lighter-blue mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-consulting-lighter-blue mb-8 max-w-2xl mx-auto px-4">
             Ready to become our next success story? Let's discuss how we can help transform your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild
               size="lg"
-              className="bg-white text-consulting-blue hover:bg-gray-100 px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-white text-consulting-blue hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Link to="/contact">
                 Start Your Journey
@@ -298,7 +298,7 @@ const Testimonials = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-consulting-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 bg-transparent"
             >
               <Link to="/services">View Our Services</Link>
             </Button>

@@ -79,17 +79,17 @@ const Services = () => {
       <section className="py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Our Consulting Services
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 px-4">
             At <span className="font-bold text-blue-400">OptiTech Consulting Ltd</span>, we go beyond temporary fixes to deliver future-proof IT strategies 
             that drive measurable growth. Our consulting services bridge the gap between your business objectives and cutting-edge technology.
             </p>
             <Button 
               asChild
               size="lg"
-              className="bg-consulting-blue hover:bg-consulting-light-blue text-white px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-consulting-blue hover:bg-consulting-light-blue text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Link to="/contact">
                 Start Your Project
@@ -103,26 +103,26 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                 <CardHeader className="text-center pb-4">
                   <div className="mb-4 flex justify-center">
-                    <div className="w-20 h-20 bg-consulting-lighter-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-consulting-lighter-blue rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       {service.icon}
                     </div>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900">
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <p className="text-gray-600 text-center">
+                  <p className="text-sm sm:text-base text-gray-600 text-center">
                     {service.description}
                   </p>
                   
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-3">Key Features:</h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center space-x-2">
@@ -141,7 +141,7 @@ const Services = () => {
 
                   <Button 
                     asChild
-                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300"
+                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white transition-all duration-300 text-sm sm:text-base"
                   >
                     <Link to="/contact">
                       Inquire About This Service
@@ -158,13 +158,13 @@ const Services = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Proven Process</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Proven Process</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               We follow a structured approach that ensures consistent results and delivers tailored solutions with precision, transparency, and measurable impact.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {process.map((step, index) => (
               <div key={index} className="relative">
                 {/* Connection line */}
@@ -173,14 +173,14 @@ const Services = () => {
                 )}
                 
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 relative z-10">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-consulting-blue text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  <CardContent className="p-4 sm:p-6 text-center">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-consulting-blue text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-4">
                       {step.step}
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-sm sm:text-base text-gray-600">
                       {step.description}
                     </p>
                   </CardContent>
@@ -194,17 +194,17 @@ const Services = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-consulting-blue to-consulting-light-blue">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-consulting-lighter-blue mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-consulting-lighter-blue mb-8 max-w-2xl mx-auto px-4">
             Let's discuss how our consulting services can help you achieve your business objectives and drive sustainable growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild
               size="lg"
-              className="bg-white text-consulting-blue hover:bg-gray-100 px-8 py-4 text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              className="bg-white text-consulting-blue hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Link to="/contact">
                 Schedule a Consultation
@@ -215,7 +215,7 @@ const Services = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-consulting-blue px-8 py-4 text-lg rounded-lg transition-all duration-300 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-consulting-blue px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-lg transition-all duration-300 bg-transparent"
             >
               <Link to="/industries">View Case Studies</Link>
             </Button>

@@ -96,7 +96,7 @@
 @keyframes fade-in-up {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -118,7 +118,7 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 
@@ -140,7 +140,7 @@
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .animate-scroll-infinite {
@@ -153,4 +153,3 @@
 
 .gradient-light-blue {
   background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
-}
