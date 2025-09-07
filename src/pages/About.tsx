@@ -139,21 +139,21 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-16 sm:pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-consulting-lightest-blue to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               About <span className="font-bold text-blue-400">OptiTech Consulting Limited</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 px-4 leading-relaxed">
               At <span className="font-bold text-blue-400">OptiTech Consulting Ltd</span>, we employ a holistic approach to training and capacity
               building, combining cutting-edge methodologies with practical, hands-on experiences. 
               Our programs are designed by industry subject matter experts and delivered by seasoned 
               trainers who bring real-world insights and wealth of knowledge to every session.
             </p>
-            <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
+            <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-12">
               {stats.map((stat, index) => (
                 <div key={index}>
                   {stat.customDisplay ? (
@@ -181,63 +181,59 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4">
-               
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400 mb-4 md:mb-6">Our Vision</h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-4 md:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-3 sm:mb-4 md:mb-6 leading-tight">Our Vision</h2>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 To become a leading IT consulting and solutions provider recognized for our commitment to excellence, innovation,
                 and client-centricity, setting new standards in technology training, equipment procurement, and IT consulting.
               </p> 
-              <br></br>
               
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400 mb-4 md:mb-6">Our Mission</h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-4 md:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-3 sm:mb-4 md:mb-6 leading-tight mt-6 sm:mt-8">Our Mission</h2>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Our mission is to deliver comprehensive IT solutions and training that bridge the technology 
                 skills gap, improve operational efficiency, and drive sustainable growth for our clients. 
                 We are dedicated to creating value through innovative solutions, quality products, and expert 
                 services that empower organizations and professionals to succeed in a digital-first world.
               </p>
-              <div className="space-y-4">
-              </div>
             </div>
-            <div className="relative mt-8 lg:mt-0">
-        <img 
-          src={MeetingImage} // Use the imported variable
-          alt="Professional consulting team"
-          className="w-full rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
-        />
-              <div className="absolute inset-0 bg-consulting-blue/10 rounded-2xl"></div>
+            <div className="relative mt-6 sm:mt-8 lg:mt-0">
+              <img 
+                src={MeetingImage}
+                alt="Professional consulting team"
+                className="w-full rounded-xl sm:rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-consulting-blue/10 rounded-xl sm:rounded-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">Our Core Values</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               These values guide every decision we make and every relationship we build.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 md:gap-8">
             {values.map((value, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardContent className="p-6 text-center">
+                <CardContent className="p-4 sm:p-6 text-center">
                   <div className="mb-4 flex justify-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-consulting-lighter-blue rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-consulting-lighter-blue rounded-lg flex items-center justify-center">
                       {value.icon}
                     </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2 leading-tight">
                     {value.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-600">
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                     {value.description}
                   </p>
                 </CardContent>
@@ -248,11 +244,11 @@ const About = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">Our Journey</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               <span className="font-bold text-blue-400">OptiTech Consulting Limited</span> began with a mission to revolutionize IT capabilities across sectors. 
               Today, we stand as a premier IT solutions provider.
             </p>
@@ -260,20 +256,19 @@ const About = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-consulting-light-blue hidden sm:block"></div>
+              {/* Timeline line - Mobile optimized */}
+              <div className="absolute left-2 sm:left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-consulting-light-blue"></div>
               
               {timeline.map((item, index) => (
-                <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
-                  {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-consulting-blue rounded-full border-4 border-white shadow-lg z-10 hidden sm:block"></div>
+                <div key={index} className={`relative flex items-center mb-6 sm:mb-8 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
+                  {/* Timeline dot - Mobile optimized */}
+                  <div className="absolute left-2 sm:left-4 md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-consulting-blue rounded-full border-2 sm:border-4 border-white shadow-lg z-10"></div>
                   
-                  {/* Content */}
-                  <div className={`ml-0 sm:ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'lg:text-right lg:pr-8' : 'lg:pl-8'}`}>
-                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg border border-gray-100">
-                      {/* <div className="text-consulting-blue font-bold text-lg mb-2">{item.year}</div> */}
-                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{item.event}</h3>
-                      <p className="text-sm sm:text-base text-gray-600">{item.description}</p>
+                  {/* Content - Mobile optimized */}
+                  <div className={`ml-6 sm:ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'lg:text-right lg:pr-8' : 'lg:pl-8'}`}>
+                    <div className="bg-white p-3 sm:p-4 md:p-6 rounded-lg shadow-lg border border-gray-100">
+                      <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2 leading-tight">{item.event}</h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -284,16 +279,16 @@ const About = () => {
       </section>
 
     {/* Team Section */}
-      <section className="py-20 bg-consulting-lightest-blue">
+      <section className="py-12 sm:py-16 lg:py-20 bg-consulting-lightest-blue">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">Leadership Team</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
               Meet the experienced professionals leading our mission to transform businesses worldwide.
             </p>
           </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
               {[
                 {
                   name: "Asiwaju Olukanmi Ayokanmi, FCPA",
@@ -312,14 +307,14 @@ const About = () => {
                 // }
               ].map((member, index) => (
                 <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <CardContent className="p-6 text-center">
+                  <CardContent className="p-4 sm:p-6 text-center">
                     <img 
                       src={member.image}
                       alt={member.name}
-                      className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto mb-4 object-cover"
+                      className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto mb-4 object-cover"
                     />
-                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
-                      <span className="text-base">Asiwaju Olukanmi Ayokanmi</span><span className="text-xs">, FCPA</span>
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 mb-1 leading-tight">
+                      <span className="text-sm sm:text-base">Asiwaju Olukanmi Ayokanmi</span><span className="text-xs">, FCPA</span>
                     </h3>
                     <p className="text-sm sm:text-base text-consulting-blue font-medium">
                       {member.position}
