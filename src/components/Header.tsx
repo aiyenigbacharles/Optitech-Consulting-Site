@@ -35,19 +35,20 @@ export const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo - Reduced size and improved alignment */}
-          <Link to="/" className="flex items-center space-x-2 md:space-x-4 flex-shrink-0">
-            <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center">
+        <div className="flex items-center justify-between h-16 md:h-20 lg:h-24">
+          {/* Logo - Mobile optimized */}
+          <Link to="/" className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 min-w-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-consulting-blue to-consulting-light-blue rounded-lg flex items-center justify-center flex-shrink-0">
                 <img 
                   src="./OptiTech Logo - 1.ico" 
                   alt="OptiTech Logo" 
-                  className="w-12 h-12 md:w-16 md:h-16 rounded-lg" 
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg" 
                 />
             </div>
-            <div className="flex items-center">
-              <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-consulting-blue whitespace-nowrap">
-                OptiTech Consulting Ltd
+            <div className="flex items-center min-w-0">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-consulting-blue truncate">
+                <span className="hidden sm:inline">OptiTech Consulting Ltd</span>
+                <span className="sm:hidden">OptiTech</span>
               </span>
             </div>
           </Link>
@@ -81,10 +82,11 @@ export const Header = () => {
             </div>
           )}
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Improved touch target */}
           <button
-            className="lg:hidden p-2 flex-shrink-0"
+            className="lg:hidden p-3 -mr-3 flex-shrink-0 rounded-lg hover:bg-gray-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-gray-900" />
@@ -94,15 +96,15 @@ export const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Enhanced for mobile */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t shadow-lg z-50">
-            <nav className="flex flex-col py-4">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t shadow-xl z-50 max-h-screen overflow-y-auto">
+            <nav className="flex flex-col py-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-4 py-3 text-sm font-medium transition-colors duration-200 hover:bg-consulting-lighter-blue ${
+                  className={`px-6 py-4 text-base font-medium transition-colors duration-200 hover:bg-consulting-lighter-blue active:bg-consulting-lighter-blue border-b border-gray-100 last:border-b-0 ${
                     isActive(item.href) ? 'text-consulting-blue bg-consulting-lighter-blue' : 'text-gray-700'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -112,10 +114,10 @@ export const Header = () => {
               ))}
               {/* Hide Get Started button in mobile menu when on Contact page */}
               {location.pathname !== '/contact' && (
-                <div className="px-4 py-3">
+                <div className="px-6 py-4 border-t border-gray-200">
                   <Button 
                     asChild
-                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white"
+                    className="w-full bg-consulting-blue hover:bg-consulting-light-blue text-white py-3 text-base font-medium"
                   >
                     <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Get Started</Link>
                   </Button>

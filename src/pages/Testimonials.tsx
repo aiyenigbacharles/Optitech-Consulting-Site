@@ -171,7 +171,7 @@ const Testimonials = () => {
                   
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 transition-all duration-500 ease-in-out">
                     <img
-                      src={testimonials[activeTestimonial].image}
+                      src={testimonials[activeTestimonial].image as string}
                       alt={testimonials[activeTestimonial].name}
                       className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
                     />
@@ -251,7 +251,7 @@ const Testimonials = () => {
                   
                   <div className="flex items-center space-x-3 pt-4">
                     <img
-                      src={testimonial.image}
+                      src={testimonial.image as string}
                       alt={testimonial.name}
                       className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0"
                     />
